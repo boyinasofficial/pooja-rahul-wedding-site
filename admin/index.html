@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin · Pooja & Rahul</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Cormorant+Garamond:wght@500;600;700&family=Noto+Serif+Telugu:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--plum:#4a2233;--maroon:#7a1f2b;--gold:#c9a24a;--cream:#f5ebdd;--paper:#efe2d3;--ink:#3b1d28}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Cormorant Garamond","Noto Serif Telugu",Georgia,serif;background:var(--paper);color:var(--ink);font-size:17px}
+button,input{font:inherit}
+.login{min-height:100vh;display:grid;place-items:center;padding:20px;background:radial-gradient(ellipse at 50% 30%,#6b3a4c,#2c1420 70%)}
+.login form{width:min(360px,100%);background:var(--cream);padding:30px 24px;border-radius:18px;box-shadow:0 0 0 3px var(--gold),0 20px 50px rgba(0,0,0,.4);text-align:center}
+.login h1{font-family:Cinzel,serif;color:var(--maroon);font-size:22px;margin-bottom:4px}
+.login p{color:#6c4a56;margin-bottom:18px}
+.login input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid #b99;margin-bottom:12px;font-size:17px}
+.btn{padding:11px 20px;border-radius:30px;border:0;background:var(--maroon);color:var(--cream);font-weight:700;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--maroon);border:1px solid var(--maroon)}
+.err{color:var(--maroon);font-weight:700;min-height:1.4em;margin-top:8px}
+header{position:sticky;top:0;z-index:5;background:var(--plum);color:var(--cream);padding:12px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+header h1{font-family:Cinzel,serif;font-size:18px;color:#e3bf63}
+header .acts{display:flex;gap:8px}
+header .btn{background:#e3bf63;color:var(--plum);padding:8px 14px;font-size:15px}
+main{max-width:1150px;margin:0 auto;padding:18px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:20px}
+.stat{background:#fff8ef;border:1px solid rgba(201,162,74,.6);border-radius:14px;padding:14px}
+.stat b{display:block;font-family:Cinzel,serif;font-size:30px;color:var(--maroon)}
+.stat span{font-size:14px;color:#6c4a56}
+.tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.tabs button{padding:8px 16px;border-radius:24px;border:1px solid var(--maroon);background:transparent;color:var(--maroon);cursor:pointer;font-weight:700}
+.tabs button.on{background:var(--maroon);color:var(--cream)}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.tools input,.tools select{padding:9px 12px;border-radius:10px;border:1px solid #c9b0a0;background:#fff}
+.tools input{flex:1;min-width:180px}
+.tablewrap{overflow-x:auto;background:#fff8ef;border-radius:14px;border:1px solid rgba(201,162,74,.5)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid #eadbcc;vertical-align:top}
+th{background:#f3e3d0;color:var(--plum);position:sticky;top:0;white-space:nowrap}
+td.ev span{display:inline-block;padding:2px 8px;margin:2px;border-radius:12px;background:#f2e0b8;font-size:13px}
+.blessings{columns:3 260px;column-gap:14px}
+.bless{break-inside:avoid;margin-bottom:14px;background:#fff8ef;border-left:4px solid var(--gold);border-radius:10px;padding:14px}
+.bless p{font-style:italic;margin-bottom:6px}
+.bless small{color:#6c4a56}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+.ph{background:#fff8ef;border-radius:12px;overflow:hidden;border:1px solid rgba(201,162,74,.5)}
+.ph img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:#e9dccd}
+.ph div{padding:8px 10px;font-size:14px;display:flex;justify-content:space-between;gap:6px;align-items:center}
+.ph a{color:var(--maroon);font-weight:700;text-decoration:none}
+.empty{padding:30px;text-align:center;color:#6c4a56}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+<section class="login" id="login">
+  <form id="loginForm">
+    <h1>Pooja ❖ Rahul</h1>
+    <p>Admin · RSVPs & Photo Booth</p>
+    <input type="password" id="pw" placeholder="Password" autocomplete="current-password" required>
+    <button class="btn" type="submit" id="loginBtn">Open dashboard</button>
+    <p class="err" id="loginErr" role="alert"></p>
+  </form>
+</section>
+
+<div id="app" hidden>
+  <header>
+    <h1>Pooja ❖ Rahul · Dashboard</h1>
+    <div class="acts">
+      <button class="btn" id="refresh" type="button">Refresh</button>
+      <button class="btn" id="csv" type="button">Download CSV</button>
+      <button class="btn" id="logout" type="button">Log out</button>
+    </div>
+  </header>
+  <main>
+    <div class="stats" id="stats"></div>
+    <div class="tabs" role="tablist">
+      <button type="button" class="on" data-tab="rsvps">RSVPs</button>
+      <button type="button" data-tab="blessings">Blessings</button>
+      <button type="button" data-tab="photos">Photo Booth</button>
+    </div>
+
+    <section data-panel="rsvps">
+      <div class="tools">
+        <input id="q" placeholder="Search name or phone">
+        <select id="fSide"><option value="">Both sides</option><option value="bride">Bride's side</option><option value="groom">Groom's side</option></select>
+        <select id="fEvent"><option value="">All events</option><option value="vindu">Vindu</option><option value="muhurtham">Muhurtham</option><option value="vratham">Vratham</option><option value="reception">Reception</option></select>
+      </div>
+      <div class="tablewrap"><table>
+        <thead><tr><th>When</th><th>Name</th><th>Phone</th><th>Side</th><th>Guests</th><th>Events</th><th>Blessing</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table></div>
+    </section>
+    <section data-panel="blessings" hidden><div class="blessings" id="blessList"></div></section>
+    <section data-panel="photos" hidden><div class="gallery" id="gallery"></div></section>
+  </main>
+</div>
+
+<script src="../js/config.js"></script>
+<script>
+(function(){
+  const API = window.WEDDING_CONFIG.API_URL;
+  const $ = s => document.querySelector(s);
+  const EV = {vindu:"Vindu", muhurtham:"Muhurtham", vratham:"Vratham", reception:"Reception"};
+  let pw = "", data = {rsvps:[], photos:[]};
+
+  // Everything from the sheet is guest-written: always set with textContent.
+  function cell(tr, text){ const td = document.createElement("td"); td.textContent = text == null ? "" : String(text); tr.appendChild(td); return td; }
+  const fmt = iso => { const d = new Date(iso); return isNaN(d) ? iso : d.toLocaleString("en-IN",{day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"}); };
+
+  async function call(password){
+    if(!API) throw new Error("API_URL is empty in js/config.js");
+    const r = await fetch(API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({action:"admin",password})});
+    return r.json();
+  }
+
+  $("#loginForm").addEventListener("submit", async e => {
+    e.preventDefault(); $("#loginErr").textContent = ""; $("#loginBtn").disabled = true;
+    try{
+      const res = await call($("#pw").value);
+      if(!res.ok){
+        $("#loginErr").textContent = {wrong_password:"Wrong password", locked:"Too many tries. Wait 15 minutes.", not_configured:"Set ADMIN_PASSWORD in Apps Script"}[res.error] || "Could not log in";
+        return;
+      }
+      pw = $("#pw").value; $("#pw").value = ""; data = res;
+      $("#login").hidden = true; $("#app").hidden = false; render();
+    }catch(err){ $("#loginErr").textContent = err.message; }
+    finally{ $("#loginBtn").disabled = false; }
+  });
+
+  $("#refresh").addEventListener("click", async () => { const r = await call(pw); if(r.ok){ data = r; render(); } });
+  $("#logout").addEventListener("click", () => { pw = ""; data = {rsvps:[],photos:[]}; $("#app").hidden = true; $("#login").hidden = false; });
+  document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll(".tabs button").forEach(x => x.classList.toggle("on", x === b));
+    document.querySelectorAll("[data-panel]").forEach(p => p.hidden = p.dataset.panel !== b.dataset.tab);
+  }));
+  ["#q","#fSide","#fEvent"].forEach(s => $(s).addEventListener("input", renderRows));
+
+  function render(){
+    const R = data.rsvps;
+    const people = R.reduce((a,r)=>a+r.guests,0);
+    const per = k => R.filter(r=>r.events.includes(k)).reduce((a,r)=>a+r.guests,0);
+    const stats = [
+      [R.length,"Responses"],[people,"Total guests"],
+      [per("vindu"),"Vindu (17 Dec)"],[per("muhurtham"),"Muhurtham (18 Dec)"],
+      [per("vratham"),"Vratham (19 Dec)"],[per("reception"),"Reception (20 Dec)"],
+      [R.filter(r=>r.side==="bride").length+" / "+R.filter(r=>r.side==="groom").length,"Bride / Groom side"],
+      [data.photos.length,"Photos"]
+    ];
+    const st = $("#stats"); st.textContent = "";
+    stats.forEach(([n,l]) => { const d = document.createElement("div"); d.className = "stat"; const b = document.createElement("b"); b.textContent = n; const s = document.createElement("span"); s.textContent = l; d.append(b,s); st.appendChild(d); });
+    renderRows(); renderBless(); renderPhotos();
+  }
+
+  function filtered(){
+    const q = $("#q").value.trim().toLowerCase(), side = $("#fSide").value, ev = $("#fEvent").value;
+    return data.rsvps.filter(r =>
+      (!q || String(r.name).toLowerCase().includes(q) || String(r.phone).includes(q)) &&
+      (!side || r.side === side) && (!ev || r.events.includes(ev)));
+  }
+  function renderRows(){
+    const tb = $("#rows"); tb.textContent = "";
+    const list = filtered();
+    if(!list.length){ const tr = document.createElement("tr"); const td = cell(tr,"No responses yet"); td.colSpan = 7; td.className = "empty"; tb.appendChild(tr); return; }
+    list.forEach(r => {
+      const tr = document.createElement("tr");
+      cell(tr, fmt(r.time)); cell(tr, r.name); cell(tr, r.phone);
+      cell(tr, r.side === "groom" ? "Groom" : "Bride"); cell(tr, r.guests);
+      const td = cell(tr, ""); td.className = "ev";
+      r.events.forEach(k => { const s = document.createElement("span"); s.textContent = EV[k] || k; td.appendChild(s); });
+      cell(tr, r.blessing);
+      tb.appendChild(tr);
+    });
+  }
+  function renderBless(){
+    const box = $("#blessList"); box.textContent = "";
+    const list = data.rsvps.filter(r => r.blessing);
+    if(!list.length){ box.innerHTML = '<p class="empty">No blessings yet</p>'; return; }
+    list.forEach(r => {
+      const d = document.createElement("div"); d.className = "bless";
+      const p = document.createElement("p"); p.textContent = "“" + r.blessing + "”";
+      const s = document.createElement("small"); s.textContent = "— " + r.name + " · " + fmt(r.time);
+      d.append(p,s); box.appendChild(d);
+    });
+  }
+  function renderPhotos(){
+    const g = $("#gallery"); g.textContent = "";
+    if(!data.photos.length){ g.innerHTML = '<p class="empty">No photo booth pictures yet</p>'; return; }
+    data.photos.forEach(ph => {
+      if(!/^[\w-]+$/.test(ph.id)) return;
+      const d = document.createElement("div"); d.className = "ph";
+      const img = document.createElement("img"); img.loading = "lazy"; img.alt = ph.name;
+      img.src = "https://drive.google.com/thumbnail?id=" + ph.id + "&sz=w600";
+      const bar = document.createElement("div");
+      const n = document.createElement("span"); n.textContent = ph.name;
+      const a = document.createElement("a"); a.href = "https://drive.google.com/uc?export=download&id=" + ph.id; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Download";
+      bar.append(n,a); d.append(img,bar); g.appendChild(d);
+    });
+  }
+
+  $("#csv").addEventListener("click", () => {
+    const esc = v => { let s = String(v == null ? "" : v); if(/^[=+\-@]/.test(s)) s = "'" + s; return '"' + s.replace(/"/g,'""') + '"'; };
+    const head = ["Time","Name","Phone","Side","Guests","Vindu","Muhurtham","Vratham","Reception","Blessing"];
+    const lines = [head.map(esc).join(",")].concat(data.rsvps.map(r => [r.time,r.name,r.phone,r.side,r.guests,
+      ...["vindu","muhurtham","vratham","reception"].map(k => r.events.includes(k) ? "Yes" : ""), r.blessing].map(esc).join(",")));
+    const blob = new Blob(["﻿" + lines.join("\n")], {type:"text/csv;charset=utf-8"});
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "pooja-rahul-rsvps.csv"; a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  });
+})();
+</script>
+</body>
+</html>

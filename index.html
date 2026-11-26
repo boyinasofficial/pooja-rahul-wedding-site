@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lakshmi Sri Pooja weds Rahul · శుభలేఖ</title>
+<meta name="description" content="Wedding invitation of Chi. La. Sow. Lakshmi Sri Pooja and Chi. Rahul · Sumuhurtham 18 December 2026, Eluru">
+<meta property="og:title" content="Lakshmi Sri Pooja weds Rahul">
+<meta property="og:description" content="Sumuhurtham · 18 December 2026 · Sree Convention, Eluru">
+<meta name="theme-color" content="#4a2233">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/images/01_entrance-doors_mobile.webp" media="(max-aspect-ratio: 1/1)">
+<link rel="preload" as="image" href="assets/images/01_entrance-doors_desktop.webp" media="(min-aspect-ratio: 1/1)">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=Noto+Serif+Telugu:wght@400;600;700&family=Tiro+Telugu&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="locked">
+
+<!-- ============ PETALS + AKSHINTALU LAYER ============ -->
+<canvas id="petals" aria-hidden="true"></canvas>
+
+<!-- ============ 0. ENTRANCE: TEMPLE DOORS ============ -->
+<section id="gate" class="gate" aria-label="Entrance">
+  <div class="gate-stage" id="gateStage">
+    <img class="gate-bg" id="gateBg" alt="" decoding="async">
+    <div class="gate-inner" id="gateInner" aria-hidden="true"><div class="gate-light"></div></div>
+    <div class="gate-leaves" id="gateLeaves" aria-hidden="true">
+      <div class="gleaf gleaf-l"><img id="leafL" alt=""></div>
+      <div class="gleaf gleaf-r"><img id="leafR" alt=""></div>
+    </div>
+    <img class="gate-trunks" id="gateTrunks" alt="" hidden>
+  </div>
+  <div class="gate-flash" aria-hidden="true"></div>
+  <div class="lang-pick gate-lang" role="group" aria-label="Language">
+    <button type="button" data-lang="te" class="lang-btn">తెలుగు</button>
+    <button type="button" data-lang="en" class="lang-btn">English</button>
+  </div>
+  <div class="gate-ui">
+    <div class="om" aria-hidden="true">ॐ</div>
+    <button type="button" id="openGate" class="gate-open">
+      <span class="diya" aria-hidden="true"></span>
+      <span data-i18n="gate.open">శుభలేఖ తెరవండి</span>
+    </button>
+    <p class="gate-hint" data-i18n="gate.hint">ఆలయ ద్వారాలు తెరవడానికి నొక్కండి</p>
+  </div>
+</section>
+
+<!-- floating controls -->
+<div class="controls">
+  <button type="button" id="langToggle" class="ctrl" aria-label="Change language"><span data-i18n="lang.label">English</span></button>
+  <button type="button" id="musicToggle" class="ctrl ctrl-music" aria-label="Music"><span class="bars"><i></i><i></i><i></i><i></i></span></button>
+</div>
+
+<main id="story">
+
+  <!-- ============ 1. INVOCATION ============ -->
+  <section id="invocation" class="chapter invocation">
+    <div class="arch-wrap reveal">
+      <div class="arch-art" data-img="04_ganesha-arch" aria-hidden="true"></div>
+      <div class="arch-fallback" aria-hidden="true">
+        <div class="arch-shape"></div>
+        <div class="banana banana-l"></div><div class="banana banana-r"></div>
+        <div class="ganesha-mark">ॐ</div>
+      </div>
+      <div class="arch-content">
+        <div class="tri-blessing">
+          <span data-i18n="inv.srirasthu">శ్రీరస్తు</span>
+          <span data-i18n="inv.subhamasthu">శుభమస్తు</span>
+          <span data-i18n="inv.avighnamasthu">అవిఘ్నమస్తు</span>
+        </div>
+        <p class="shloka" data-i18n="inv.shloka"></p>
+      </div>
+    </div>
+    <p class="shloka-meaning reveal" data-i18n="inv.meaning"></p>
+    <p class="scroll-cue reveal" data-i18n="inv.scroll"></p>
+  </section>
+
+  <!-- ============ 2. STARS MEET ============ -->
+  <section id="stars" class="chapter stars" data-img="03_star-night-sky">
+    <div class="stars-bg" aria-hidden="true"></div>
+    <p class="kicker light" data-i18n="stars.kicker"></p>
+    <svg id="sky" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <defs>
+        <radialGradient id="gStar"><stop offset="0" stop-color="#fff"/><stop offset=".35" stop-color="#ffe6a3"/><stop offset="1" stop-color="#ffcf5a" stop-opacity="0"/></radialGradient>
+        <radialGradient id="gHalo"><stop offset="0" stop-color="#fff8e1" stop-opacity=".95"/><stop offset=".18" stop-color="#ffe08a" stop-opacity=".7"/><stop offset=".5" stop-color="#ffcf5a" stop-opacity=".22"/><stop offset="1" stop-color="#ffcf5a" stop-opacity="0"/></radialGradient>
+        <radialGradient id="gSun"><stop offset="0" stop-color="#fff6d0"/><stop offset=".5" stop-color="#f6b93b"/><stop offset="1" stop-color="#e67e22" stop-opacity="0"/></radialGradient>
+        <radialGradient id="gMoon"><stop offset="0" stop-color="#fffdf2"/><stop offset=".7" stop-color="#e9e2cf"/><stop offset="1" stop-color="#cfc6b0" stop-opacity="0"/></radialGradient>
+        <radialGradient id="gFlame" cx=".5" cy=".7" r=".6"><stop offset="0" stop-color="#fff"/><stop offset=".4" stop-color="#ffd36b"/><stop offset="1" stop-color="#ff8c1a" stop-opacity="0"/></radialGradient>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <g id="dust"></g>
+      <line class="rasi-border" x1="470" y1="200" x2="470" y2="800"/>
+      <g id="cancer" class="const"></g>
+      <g id="leo" class="const"></g>
+      <g id="aslesha" class="nak"></g>
+      <g id="magha" class="nak"></g>
+      <text id="tCancer" data-i18n="stars.cancer" class="sky-label" x="230" y="225" text-anchor="middle"></text>
+      <text id="tLeo" data-i18n="stars.leo" class="sky-label" x="760" y="225" text-anchor="middle"></text>
+      <text id="tAslesha" data-i18n="stars.aslesha" class="sky-name" x="300" y="650" text-anchor="middle"></text>
+      <text id="tMagha" data-i18n="stars.magha" class="sky-name" x="620" y="650" text-anchor="middle"></text>
+      <g id="moon"><circle r="46" fill="url(#gMoon)"/><circle r="30" fill="#f8f3e3"/><circle cx="12" cy="-6" r="26" fill="#1b1640" opacity=".92"/></g>
+      <g id="sun"><circle r="70" fill="url(#gSun)"/><circle r="30" fill="#ffd56b"/><g class="rays"></g></g>
+      <circle id="orbA" r="10" fill="url(#gStar)" filter="url(#glow)" opacity="0"/>
+      <circle id="orbM" r="10" fill="url(#gStar)" filter="url(#glow)" opacity="0"/>
+      <g id="deepam" opacity="0">
+        <ellipse cx="0" cy="-34" rx="26" ry="48" fill="url(#gFlame)"/>
+        <path d="M0 -70 C 14 -48, 14 -26, 0 -14 C -14 -26, -14 -48, 0 -70 Z" fill="#ffdf7e"/>
+        <path d="M-62 -6 Q 0 34 62 -6 Q 48 26 0 30 Q -48 26 -62 -6 Z" fill="#c9a24a" stroke="#8a6420" stroke-width="2"/>
+        <ellipse cx="0" cy="-6" rx="62" ry="10" fill="#e3bf63" stroke="#8a6420" stroke-width="2"/>
+      </g>
+    </svg>
+    <div class="stars-text">
+      <p class="sl" data-i18n="stars.l1"></p>
+      <p class="sl" data-i18n="stars.l2"></p>
+      <p class="sl" data-i18n="stars.l3"></p>
+      <p class="sl sl-big" data-i18n="stars.l4"></p>
+      <button type="button" class="replay" id="replayStars" data-i18n="stars.replay"></button>
+    </div>
+  </section>
+
+  <!-- ============ 3. NAMES / GOPURAM ============ -->
+  <section id="names" class="chapter names" data-img="02_gopuram-hero">
+    <div class="names-fallback" aria-hidden="true">
+      <div class="hills"></div>
+      <svg class="gopuram-svg" viewBox="0 0 400 520"><g fill="#c9a24a" stroke="#8a6420" stroke-width="2">
+        <rect x="70" y="420" width="260" height="100"/>
+        <path d="M95 420 L305 420 L290 360 L110 360 Z"/><path d="M115 360 L285 360 L272 305 L128 305 Z"/>
+        <path d="M132 305 L268 305 L257 255 L143 255 Z"/><path d="M147 255 L253 255 L244 210 L156 210 Z"/>
+        <path d="M160 210 L240 210 L233 172 L167 172 Z"/><path d="M150 172 Q200 110 250 172 Z"/>
+        <g fill="#e3bf63"><circle cx="175" cy="125" r="7"/><circle cx="200" cy="112" r="8"/><circle cx="225" cy="125" r="7"/></g>
+        <rect x="175" y="440" width="50" height="80" fill="#4a2233"/></g>
+        <g fill="#8a6420" opacity=".5"><rect x="120" y="375" width="12" height="30"/><rect x="160" y="375" width="12" height="30"/><rect x="228" y="375" width="12" height="30"/><rect x="268" y="375" width="12" height="30"/><rect x="150" y="320" width="10" height="22"/><rect x="240" y="320" width="10" height="22"/><rect x="195" y="270" width="10" height="22"/></g>
+      </svg>
+    </div>
+    <div class="names-card">
+      <p class="kicker" data-i18n="names.kicker"></p>
+      <div class="name-line reveal"><span class="pref" data-i18n="names.bridePrefix"></span><h1 class="nm" data-i18n="names.bride"></h1><span class="deg" data-i18n="names.brideDeg"></span></div>
+      <div class="weds reveal" data-i18n="names.with"></div>
+      <div class="name-line reveal"><span class="pref" data-i18n="names.groomPrefix"></span><h1 class="nm" data-i18n="names.groom"></h1><span class="deg" data-i18n="names.groomDeg"></span></div>
+      <div class="date-ribbon reveal" data-i18n="names.date"></div>
+    </div>
+  </section>
+
+  <!-- ============ 4. FAMILIES ============ -->
+  <section id="families" class="chapter families" data-img="05_families-mandapam">
+    <div class="pillar pillar-l" aria-hidden="true"></div><div class="pillar pillar-r" aria-hidden="true"></div>
+    <div class="fam-inner">
+      <p class="kicker" data-i18n="fam.kicker"></p>
+      <p class="fam-lead reveal" data-i18n="fam.lead"></p>
+      <div class="fam-grid">
+        <article class="fam-card reveal">
+          <h3 data-i18n="fam.brideSide"></h3>
+          <p class="gp" data-i18n="fam.brideGp"></p>
+          <p class="parents" data-i18n="fam.brideParents"></p>
+          <p class="rel" data-i18n="fam.brideRel"></p>
+        </article>
+        <div class="fam-knot reveal" aria-hidden="true">❁</div>
+        <article class="fam-card reveal">
+          <h3 data-i18n="fam.groomSide"></h3>
+          <p class="gp" data-i18n="fam.groomGp"></p>
+          <p class="parents" data-i18n="fam.groomParents"></p>
+          <p class="rel" data-i18n="fam.groomRel"></p>
+        </article>
+      </div>
+      <p class="fam-decided reveal" data-i18n="fam.decided"></p>
+    </div>
+  </section>
+
+  <!-- ============ 5. COUPLE PHOTOS ============ -->
+  <section id="couple" class="chapter couple">
+    <p class="kicker" data-i18n="couple.kicker"></p>
+    <p class="couple-line reveal" data-i18n="couple.line"></p>
+    <div class="frames">
+      <figure class="tframe main reveal"><div class="tf-photo"><img src="assets/images/couple-1.jpg" alt="Pooja and Rahul" loading="lazy"></div><img class="tf-frame" src="assets/images/06_photo-frame.webp" alt=""></figure>
+    </div>
+  </section>
+
+  <!-- ============ 6. EVENTS (temple doors) ============ -->
+  <section id="events" class="chapter events">
+    <p class="kicker" data-i18n="ev.kicker"></p>
+    <h2 class="ch-title reveal" data-i18n="ev.title"></h2>
+    <p class="ch-sub reveal" data-i18n="ev.sub"></p>
+    <div class="event-list" id="eventList"></div>
+  </section>
+
+  <!-- ============ 7. BRAHMAMUDI ============ -->
+  <section id="knot" class="chapter knot">
+    <p class="kicker" data-i18n="knot.kicker"></p>
+    <div class="knot-stage" id="knotStage">
+      <img class="knot-half knot-l" src="assets/images/12_brahmamudi-knot.webp" alt="">
+      <img class="knot-half knot-r" src="assets/images/12_brahmamudi-knot.webp" alt="">
+      <div class="knot-glow" aria-hidden="true"></div>
+    </div>
+    <p class="knot-line reveal" data-i18n="knot.line"></p>
+  </section>
+
+  <!-- ============ 8. COUNTDOWN ============ -->
+  <section id="countdown" class="chapter countdown" data-img="13_countdown-courtyard">
+    <div class="cd-inner">
+      <p class="kicker" data-i18n="cd.kicker"></p>
+      <h2 class="ch-title" data-i18n="cd.title"></h2>
+      <div class="cd-grid" id="cdGrid">
+        <div class="cd-cell"><span id="cdD">--</span><small data-i18n="cd.days"></small></div>
+        <div class="cd-cell"><span id="cdH">--</span><small data-i18n="cd.hours"></small></div>
+        <div class="cd-cell"><span id="cdM">--</span><small data-i18n="cd.mins"></small></div>
+        <div class="cd-cell"><span id="cdS">--</span><small data-i18n="cd.secs"></small></div>
+      </div>
+      <p class="cd-done" id="cdDone" data-i18n="cd.done" hidden></p>
+    </div>
+    <div class="muggu" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============ 9. RSVP ============ -->
+  <section id="rsvp" class="chapter rsvp">
+    <p class="kicker" data-i18n="rsvp.kicker"></p>
+    <div class="scroll-head" id="scrollHead">
+      <img src="assets/images/14_rsvp-palm-leaf.webp" alt="">
+      <h2 class="scroll-title" data-i18n="rsvp.title"></h2>
+    </div>
+    <p class="ch-sub reveal" data-i18n="rsvp.sub"></p>
+
+    <div class="leaf" id="leaf">
+      <span class="leaf-thread" aria-hidden="true"></span>
+      <form id="rsvpForm" class="leaf-form" novalidate>
+        <label class="fld"><span data-i18n="rsvp.name"></span>
+          <input name="name" maxlength="80" autocomplete="name" data-i18n-ph="rsvp.namePh" required></label>
+        <label class="fld"><span data-i18n="rsvp.phone"></span>
+          <input name="phone" maxlength="20" inputmode="tel" autocomplete="tel" placeholder="+91"></label>
+
+        <fieldset class="fld">
+          <legend data-i18n="rsvp.side"></legend>
+          <div class="side-pick">
+            <label><input type="radio" name="side" value="bride" checked><span data-i18n="rsvp.sideBride"></span></label>
+            <label><input type="radio" name="side" value="groom"><span data-i18n="rsvp.sideGroom"></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="fld">
+          <legend data-i18n="rsvp.count"></legend>
+          <div class="kalasams" id="kalasams" role="radiogroup"></div>
+        </fieldset>
+
+        <fieldset class="fld">
+          <legend data-i18n="rsvp.events"></legend>
+          <div class="lamps" id="lamps"></div>
+        </fieldset>
+
+        <label class="fld"><span data-i18n="rsvp.bless"></span>
+          <textarea name="blessing" rows="3" maxlength="500" data-i18n-ph="rsvp.blessPh"></textarea></label>
+
+        <p class="form-err" id="formErr" role="alert"></p>
+        <button type="submit" class="btn-akshintalu" id="rsvpBtn"><span class="rice" aria-hidden="true"></span><span data-i18n="rsvp.submit"></span></button>
+      </form>
+
+      <div class="rsvp-thanks" id="rsvpThanks" hidden>
+        <div class="kalasam-big" aria-hidden="true"></div>
+        <h3 data-i18n="rsvp.thanks"></h3>
+        <p data-i18n="rsvp.thanksSub"></p>
+        <button type="button" class="link-btn" id="rsvpAgain" data-i18n="rsvp.again"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 10. PHOTO BOOTH (reserved) ============ -->
+  <section id="photobooth" class="chapter photobooth">
+    <p class="kicker" data-i18n="pb.kicker"></p>
+    <h2 class="ch-title reveal" data-i18n="pb.title"></h2>
+    <p class="ch-sub reveal" data-i18n="pb.sub"></p>
+
+    <div class="pb-stage reveal">
+      <div class="pb-viewport">
+        <canvas id="pbView" width="720" height="960" aria-label="Photo booth"></canvas>
+        <span class="pb-corner tl"></span><span class="pb-corner tr"></span><span class="pb-corner bl"></span><span class="pb-corner br"></span>
+        <button type="button" class="pb-off" id="pbOff">
+          <span class="pb-off-icon" id="pbOffIcon"></span>
+          <span data-i18n="pb.off"></span>
+          <span class="pb-off-hint" data-i18n="pb.offHint"></span>
+        </button>
+        <span class="pb-live-badge"><i></i>LIVE</span>
+        <button type="button" class="pb-flip" id="pbFlip" aria-label="Switch camera" hidden>⟲</button>
+        <div class="pb-count" id="pbCount" hidden>3</div>
+        <div class="pb-flash" id="pbFlash"></div>
+      </div>
+      <p class="pb-frame-name" id="pbFrameName"></p>
+
+      <div class="pb-toolbar" role="toolbar" aria-label="Photo booth controls">
+        <button type="button" class="pb-tool" id="pbFrameBtn"><span id="pbFrameIcon"></span><b data-i18n="pb.frame"></b></button>
+        <button type="button" class="pb-tool accent" id="pbCapture"><span id="pbCapIcon"></span><b id="pbCapLabel"></b></button>
+        <button type="button" class="pb-tool" id="pbPower" disabled><span id="pbPowerIcon"></span><b data-i18n="pb.power"></b></button>
+        <button type="button" class="pb-tool" id="pbDownload" disabled><span id="pbDownloadIcon"></span><b data-i18n="pb.download"></b></button>
+        <button type="button" class="pb-tool" id="pbShareBtn" disabled><span id="pbShareIcon"></span><b data-i18n="pb.share"></b></button>
+      </div>
+      <button type="button" class="link-btn pb-gallery" id="pbGallery" data-i18n="pb.upload"></button>
+
+      <label class="pb-name"><span data-i18n="pb.name"></span><input id="pbName" maxlength="60" autocomplete="name"></label>
+      <p class="pb-msg" id="pbMsg" role="status"></p>
+      <p class="pb-status" id="pbStatus" role="status"></p>
+      <input type="file" id="pbFile" accept="image/*" hidden>
+      <input type="file" id="pbSelfie" accept="image/*" capture="user" hidden>
+    </div>
+
+    <div class="pb-sheet" id="pbSheet" hidden>
+      <div class="pb-sheet-card" role="dialog" aria-modal="true" aria-labelledby="pbSheetTitle">
+        <div class="pb-sheet-head"><h3 id="pbSheetTitle" data-i18n="pb.sheetTitle"></h3><button type="button" class="pb-x" id="pbSheetClose" aria-label="Close">✕</button></div>
+        <img id="pbSheetImg" alt="">
+        <div class="pb-apps">
+          <button type="button" data-share="whatsapp"><span class="app wa">W</span>WhatsApp</button>
+          <button type="button" data-share="instagram"><span class="app ig">◎</span>Instagram</button>
+          <button type="button" data-share="facebook"><span class="app fb">f</span>Facebook</button>
+          <button type="button" data-share="x"><span class="app xx">X</span>X</button>
+          <button type="button" data-share="copy"><span class="app cp">🔗</span><span data-i18n="pb.copy"></span></button>
+        </div>
+        <p class="pb-sheet-msg" id="pbSheetMsg" role="status"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11. CLOSING ============ -->
+  <section id="closing" class="chapter closing" data-img="15_closing-blessing">
+    <div class="rays" aria-hidden="true"></div>
+    <div class="closing-inner">
+      <div class="om small" aria-hidden="true">ॐ</div>
+      <p class="abhilasha reveal" data-i18n="end.abhilasha"></p>
+      <div class="sign-grid">
+        <div class="reveal"><h4 data-i18n="end.invited"></h4><p data-i18n="end.inviters"></p></div>
+        <div class="reveal"><h4 data-i18n="end.love"></h4><p data-i18n="end.lovers"></p></div>
+      </div>
+      <p class="compliments reveal" data-i18n="end.compliments"></p>
+      <button type="button" class="link-btn light" id="toTop" data-i18n="end.top"></button>
+    </div>
+  </section>
+</main>
+
+<audio id="bgm" loop preload="none"></audio>
+
+<script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/stars.js"></script>
+<script src="js/main.js"></script>
+<script src="js/rsvp.js"></script>
+<script src="js/photobooth.js"></script>
+</body>
+</html>
