@@ -31,7 +31,7 @@ window.I18N = {
 
     "names.kicker": "Chapter II<br>The Auspicious Union",
     "names.bridePrefix": "Chi. La. Sow.",
-    "names.bride": "Lakshmi Sri Pooja",
+    "names.bride": "Pooja",
     "names.with": "weds",
     "names.groomPrefix": "Chi.",
     "names.groom": "Rahul",
@@ -173,7 +173,7 @@ window.I18N = {
 
     "names.kicker": "రెండవ అధ్యాయం<br>కళ్యాణ వైభోగం",
     "names.bridePrefix": "చి॥ల॥సౌ॥",
-    "names.bride": "లక్ష్మీ శ్రీపూజ",
+    "names.bride": "పూజ",
     "names.with": "❖",
     "names.groomPrefix": "చి॥",
     "names.groom": "రాహుల్",

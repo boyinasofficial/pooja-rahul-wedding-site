@@ -174,18 +174,18 @@ html[lang="te"] .sl-big{font-family:var(--f-te-disp);font-size:clamp(20px,5.4vw,
 .names-fallback{position:absolute;inset:0;pointer-events:none;z-index:0}
 .hills{display:none}
 .gopuram-svg{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:min(440px,92vw);max-height:42vh}
-.names-card{padding:18px 26px 22px;border-radius:50%/40%;background:radial-gradient(ellipse at center,rgba(252,242,226,.9) 0%,rgba(252,242,226,.78) 45%,rgba(252,242,226,0) 72%)}
+.names-card{max-width:100%;padding:18px 10px 22px;border-radius:50%/40%;background:radial-gradient(ellipse at center,rgba(252,242,226,.9) 0%,rgba(252,242,226,.78) 45%,rgba(252,242,226,0) 72%)}
 .name-line{display:flex;flex-direction:column;align-items:center}
 .pref{font-size:15px;color:var(--maroon);letter-spacing:.08em}
-.nm{font-family:var(--f-script);font-weight:400;font-size:clamp(44px,12vw,84px);line-height:1.05;
+.nm{font-family:var(--f-script);font-weight:400;font-size:clamp(58px,17vw,104px);line-height:1.2;padding:.12em .4em .22em;margin:-.12em 0 -.18em;white-space:nowrap;overflow:visible;
   background:linear-gradient(100deg,#7a1f2b 0%,#7a1f2b 40%,#d9a441 50%,#7a1f2b 60%,#7a1f2b 100%);background-size:250% 100%;
   -webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 6s ease-in-out infinite;
   filter:drop-shadow(0 2px 0 rgba(255,255,255,.7)) drop-shadow(0 0 18px rgba(255,240,210,.9))}
 @keyframes shimmer{0%,100%{background-position:100% 0}50%{background-position:0 0}}
-html[lang="te"] .nm{font-family:var(--f-te-disp);font-size:clamp(34px,10vw,62px);line-height:1.4}
+html[lang="te"] .nm{font-family:var(--f-te-disp);font-size:clamp(42px,12vw,70px);line-height:1.5;padding:.1em .3em .15em}
 .deg{font-size:13px;letter-spacing:.12em;color:#6c4a56;font-family:var(--f-en)}
-.weds{font-family:var(--f-disp);color:var(--gold-d);font-size:16px;letter-spacing:.4em;margin:6px 0;text-transform:uppercase}
-.date-ribbon{display:inline-block;margin-top:16px;padding:6px 26px;font-family:var(--f-disp);letter-spacing:.3em;color:var(--cream);
+.weds{font-family:var(--f-disp);color:var(--gold-d);font-size:16px;letter-spacing:.4em;padding-left:.4em;margin:6px 0;text-transform:uppercase}
+.date-ribbon{display:inline-block;margin-top:16px;padding:6px 26px 6px calc(26px + .3em);font-family:var(--f-disp);letter-spacing:.3em;color:var(--cream);
   background:linear-gradient(90deg,transparent,var(--maroon) 15%,var(--maroon) 85%,transparent)}
 .names .name-line.reveal{transform:translateY(20px) scale(.96);filter:blur(6px);transition:opacity 1.4s var(--ease),transform 1.4s var(--ease),filter 1.4s}
 .names .name-line.reveal.in{transform:none;filter:none}
