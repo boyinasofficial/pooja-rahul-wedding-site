@@ -224,16 +224,21 @@ html[lang="te"] .parents{font-size:16.5px}
 .couple-line{font-family:var(--f-script);font-size:clamp(30px,8vw,44px);color:var(--maroon);margin-bottom:30px}
 html[lang="te"] .couple-line{font-family:var(--f-te-disp);font-size:24px}
 .frames{display:flex;gap:28px;justify-content:center;align-items:center;flex-wrap:wrap;max-width:1000px;width:100%}
-.tframe{position:relative;aspect-ratio:744/1050;transform-origin:50% 0;filter:drop-shadow(0 16px 24px rgba(74,34,51,.35))}
-.tf-photo{position:absolute;left:13%;top:12.6%;width:74%;height:76.4%;overflow:hidden;background:#e9dccd;border-radius:3px}
-.tf-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;transform:scale(1.08);transform-origin:50% 30%;transition:transform 6s ease}
+/* Gold Corners: rounded photo with four thin gold corner marks that draw in */
+.tframe{position:relative;aspect-ratio:3/4;padding:clamp(14px,4.5vw,22px);margin:0}
+.tf-photo{position:relative;width:100%;height:100%;overflow:hidden;border-radius:12px;background:#e9dccd;box-shadow:0 14px 30px rgba(74,34,51,.25)}
+.tf-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;transform:scale(1.06);transition:transform 6s ease}
 .tframe.in .tf-photo img{transform:scale(1)}
-.tf-frame{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.tframe.main{width:min(86vw,440px);margin-top:10px}
-.tframe.side{width:min(40vw,250px);margin-top:10px}
-.tframe.reveal{opacity:0;transform:rotateX(-70deg) translateY(-20px)}
+.tc{position:absolute;width:clamp(38px,12vw,56px);height:clamp(38px,12vw,56px);border:2px solid var(--gold);pointer-events:none;
+  opacity:0;transform:scale(.4);transition:opacity .9s var(--ease) .5s,transform 1.1s var(--ease) .5s}
+.tc.tl{top:0;left:0;border-right:0;border-bottom:0;transform-origin:0 0}
+.tc.tr{top:0;right:0;border-left:0;border-bottom:0;transform-origin:100% 0}
+.tc.bl{bottom:0;left:0;border-right:0;border-top:0;transform-origin:0 100%}
+.tc.br{bottom:0;right:0;border-left:0;border-top:0;transform-origin:100% 100%}
+.tframe.in .tc{opacity:1;transform:none}
+.tframe.main{width:min(84vw,420px)}
+.tframe.reveal{opacity:0;transform:translateY(24px)}
 .tframe.reveal.in{opacity:1;transform:none}
-@media(max-width:640px){.frames{gap:14px 4vw;align-items:flex-start}.tframe.main{order:-1;width:86vw;flex-basis:100%;max-width:86vw}.tframe.side{width:41vw}}
 
 /* =========================================================
    6. EVENTS — carved doors that open on their own
