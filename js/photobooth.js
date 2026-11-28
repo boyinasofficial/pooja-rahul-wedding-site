@@ -32,7 +32,7 @@
   const T = (k) => window.t(k);
   const te = () => window.currentLang() === "te";
   function names() { return te() ? "పూజ ❖ రాహుల్" : "Pooja ❖ Rahul"; }
-  const DATE = "18 · 12 · 2026";
+  const DATE = "17 · 12 · 2026";
   function scriptFont(px) { return te() ? `${px * .62}px "Tiro Telugu","Noto Serif Telugu",serif` : `${px}px "Great Vibes",cursive`; }
   function capsFont(px) { return `600 ${px}px Cinzel,"Cormorant Garamond",serif`; }
 
